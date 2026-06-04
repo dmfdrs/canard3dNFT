@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Miguel Stream Monitor static Twitch and Instagram dashboard."
+    />
+    <title>Miguel Stream Monitor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="grid-bg"></div>
+      <section class="dashboard">
+        <header class="hero panel">
+          <div class="brand-lockup">
+            <img
+              class="logo"
+              src="public/assets/miguel-duck-logo.png"
+              alt="Miguel esports duck logo"
+            />
+            <div>
+              <p class="eyebrow">Twitch + Instagram analytics</p>
+              <h1>Miguel Stream Monitor</h1>
+              <p class="hero-copy">
+                Static HTML and CSS dashboard for itsmiguelofficial. Viewer movement is displayed only as an estimate, never exact page tracking.
+              </p>
+            </div>
+          </div>
+
+          <nav class="social-actions" aria-label="Social links">
+            <a class="social-button twitch" href="https://www.twitch.tv/itsmiguelofficial" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h17v11.5l-4.5 4.5h-4L10 22H7v-3H3V7l1-4Zm2 2v11h4v3l3-3h3l3-3V5H6Zm5 3h2v5h-2V8Zm5 0h2v5h-2V8Z"/></svg>
+              Twitch
+            </a>
+            <a class="social-button instagram" href="https://www.instagram.com/itsmiguel.official/" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Zm5-2.35a1.15 1.15 0 1 1-1.15 1.15A1.15 1.15 0 0 1 17 6.85Z"/></svg>
+              Instagram
+            </a>
+          </nav>
+        </header>
+
+        <section class="notice panel">
+          <strong>Static edition:</strong> connect a backend or the previous Next.js version for live Twitch Helix polling.
+        </section>
+
+        <section class="metric-grid" aria-label="Stream metrics">
+          <article class="metric-card panel">
+            <span class="metric-label">Live viewers</span>
+            <strong class="metric-value purple">0</strong>
+            <small>Waiting for Twitch API</small>
+          </article>
+          <article class="metric-card panel">
+            <span class="metric-label">Chatters</span>
+            <strong class="metric-value cyan">N/A</strong>
+            <small>Requires chatters OAuth scope</small>
+          </article>
+          <article class="metric-card panel">
+            <span class="metric-label">Estimated entered page</span>
+            <strong class="metric-value green">0</strong>
+            <small>Estimate from viewer delta</small>
+          </article>
+          <article class="metric-card panel">
+            <span class="metric-label">Estimated left page</span>
+            <strong class="metric-value pink">0</strong>
+            <small>Estimate from viewer delta</small>
+          </article>
+          <article class="metric-card panel">
+            <span class="metric-label">Peak viewers</span>
+            <strong class="metric-value cyan">0</strong>
+            <small>Collected during stream</small>
+          </article>
+          <article class="metric-card panel">
+            <span class="metric-label">Stream status</span>
+            <strong class="metric-value white">Offline</strong>
+            <small>Static placeholder</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="chart-panel panel">
+            <div class="section-heading">
+              <div>
+                <h2>Live analytics over time</h2>
+                <p>Viewers, chatters, and estimated visitor movement</p>
+              </div>
+              <span class="status-pill">Static preview</span>
+            </div>
+
+            <div class="chart-wrap" role="img" aria-label="Static neon line chart preview">
+              <svg class="chart" viewBox="0 0 820 330" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="viewerGlow" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#a855f7" stop-opacity=".45" />
+                    <stop offset="1" stop-color="#a855f7" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <g class="chart-grid">
+                  <path d="M40 30H800M40 90H800M40 150H800M40 210H800M40 270H800" />
+                  <path d="M40 30V290M160 30V290M280 30V290M400 30V290M520 30V290M640 30V290M760 30V290" />
+                </g>
+                <path class="chart-area" d="M45 245 L120 220 L190 230 L270 180 L350 145 L440 170 L520 105 L600 120 L690 74 L780 100 L780 290 L45 290 Z" />
+                <path class="line purple-line" d="M45 245 L120 220 L190 230 L270 180 L350 145 L440 170 L520 105 L600 120 L690 74 L780 100" />
+                <path class="line cyan-line" d="M45 265 L120 250 L190 250 L270 235 L350 220 L440 225 L520 205 L600 198 L690 188 L780 192" />
+                <path class="line green-line" d="M45 280 L120 270 L190 275 L270 252 L350 242 L440 250 L520 222 L600 230 L690 210 L780 215" />
+              </svg>
+              <div class="legend">
+                <span><i class="dot purple-dot"></i>Live viewers</span>
+                <span><i class="dot cyan-dot"></i>Chatters</span>
+                <span><i class="dot green-dot"></i>Estimated visitors</span>
+              </div>
+            </div>
+          </article>
+
+          <aside class="activity-panel panel">
+            <div class="section-heading">
+              <div>
+                <h2>Activity feed</h2>
+                <p>Events appear after Twitch polling is connected</p>
+              </div>
+            </div>
+            <ul class="activity-list">
+              <li>
+                <strong>Stream status</strong>
+                <span>Offline placeholder in static HTML version</span>
+              </li>
+              <li>
+                <strong>Viewer count changed</strong>
+                <span>Ready for Helix viewer_count samples</span>
+              </li>
+              <li>
+                <strong>Estimated entered</strong>
+                <span>Calculated from positive viewer delta</span>
+              </li>
+              <li>
+                <strong>Estimated left</strong>
+                <span>Calculated from negative viewer delta</span>
+              </li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="info-grid">
+          <article class="info-card panel">
+            <span>Brand</span>
+            <strong>@itsmiguelofficial</strong>
+            <p>Twitch profile link is ready for visitors.</p>
+          </article>
+          <article class="info-card panel">
+            <span>Instagram</span>
+            <strong>@itsmiguel.official</strong>
+            <p>Profile link only. This page does not scrape Instagram.</p>
+          </article>
+          <article class="info-card panel">
+            <span>Tracking policy</span>
+            <strong>Estimates only</strong>
+            <p>No exact page enter or leave claims.</p>
+          </article>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
